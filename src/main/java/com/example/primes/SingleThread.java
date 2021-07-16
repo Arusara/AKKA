@@ -2,15 +2,29 @@ package com.example.primes;
 
 import java.math.BigInteger;
 import java.util.Random;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class SingleThread {
 
 
 
     public static void main(String arg[]) {
-        BigInteger bigInteger = new BigInteger(4000, new Random());
-        System.out.println("Intial big integer value: "+bigInteger);
-        System.out.println("The next probable prime value: "+bigInteger.nextProbablePrime());
+
+        SortedSet<BigInteger> sortedSet = new TreeSet<>();
+
+        Long start = System.currentTimeMillis();
+
+        while(sortedSet.size() < 20) {
+            System.out.println("counter "+sortedSet.size());
+            BigInteger bigInteger = new BigInteger(2000, new Random());
+            sortedSet.add(bigInteger.nextProbablePrime());
+        }
+
+        Long end = System.currentTimeMillis();
+
+        System.out.println("The time taken is: "+ (end - start)+ " ms" );
+
 
     }
 
