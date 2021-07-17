@@ -23,7 +23,7 @@ public class SingleThread {
 
         Long end = System.currentTimeMillis();
 
-        System.out.println("The time taken is: "+ (end - start)+ " ms" );
+        System.out.println("The time taken is: "+ (end - start)/1000+ " ms" );
 
 
     }
